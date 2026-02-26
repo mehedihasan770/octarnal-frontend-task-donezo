@@ -5,37 +5,41 @@ import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 
 const Login = () => {
-    const {register, handleSubmit, formState: { errors,}} = useForm();
-    const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+  const navigate = useNavigate();
+  // const [loading, setLoading] = useState(false)
 
-    const handleLogin = async (data) => {
-        console.log(data)
-        try {
-            const response = await axiosInstance.post("/api/login", data);
+  const handleLogin = async (data) => {
+    console.log(data);
+    try {
+      const response = await axiosInstance.post("/api/login", data);
 
-            if (response.data.token) {
-                localStorage.setItem("token", response.data.token);
-                navigate("/dashboard");
-            }
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        navigate("/dashboard");
+      }
 
-            toast.success('Successfully logged in!')
-        } catch (error) {
-            toast.error("Invalid credentials, please try again.", error);
-        }
+      toast.success("Successfully logged in!");
+    } catch (error) {
+      toast.error("Invalid credentials, please try again.", error);
     }
-    
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token) {
-            navigate("/dashboard", { replace: true });
-            toast.error('You are already logged in!')
-        }
-    }, [navigate]);
-    
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/dashboard", { replace: true });
+      toast.error("You are already logged in!");
+    }
+  }, [navigate]);
+
   return (
     <div className="min-h-screen py-2 px-1 flex justify-center items-center">
       <div className="rounded-3xl w-full max-w-md shadow-2xl relative overflow-hidden font-sans">
-
         <div className="absolute inset-0 overflow-hidden -z-10">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-200 rounded-full opacity-30 blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-200 rounded-full opacity-30 blur-3xl"></div>
@@ -61,7 +65,9 @@ const Login = () => {
                 />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              Welcome Back
+            </h2>
             <p className="text-gray-500 text-sm">
               Please enter your details to sign in
             </p>
@@ -90,11 +96,21 @@ const Login = () => {
                 </span>
                 <input
                   type="email"
-                  {...register("email", {required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email format"}})}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Invalid email format",
+                    },
+                  })}
                   placeholder="michael@bird.com"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-sm outline-none focus:border-[#0E623D] focus:bg-white transition-all duration-200"
                 />
-                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -121,11 +137,17 @@ const Login = () => {
                 <input
                   type="password"
                   {...register("password", {
-                  required: "Password is required", message: "Password is required"})}
+                    required: "Password is required",
+                    message: "Password is required",
+                  })}
                   placeholder="••••••••"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-sm outline-none focus:border-[#0E623D] focus:bg-white transition-all duration-200"
                 />
-                {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
+                {errors.password && (
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -137,26 +159,41 @@ const Login = () => {
                 />
                 <span className="text-sm text-gray-600">Remember me</span>
               </label>
-              <p
-                className="text-sm cursor-pointer font-medium text-[#0E623D] hover:text-[#13452D] transition-colors"
-              >
+              <p className="text-sm cursor-pointer font-medium text-[#0E623D] hover:text-[#13452D] transition-colors">
                 Forgot password?
               </p>
             </div>
 
             <button
               type="submit"
-              className="w-full cursor-pointer bg-linear-to-r from-[#0E623D] to-[#13452D] text-white py-4 px-4 rounded-xl font-semibold text-sm hover:shadow-lg hover:shadow-[#0E623D]/30 transform hover:-translate-y-0.5 transition-all duration-200"
+              className="w-full flex items-center justify-center cursor-pointer bg-linear-to-r from-[#0E623D] to-[#13452D] text-white py-4 px-4 rounded-xl font-semibold text-sm hover:shadow-lg hover:shadow-[#0E623D]/30 transform hover:-translate-y-0.5 transition-all duration-200"
             >
-              Sign in to account
+              {isSubmitting ? (
+                <span className="flex items-center">
+                  Signing in
+                  <span className="flex ml-1">
+                    <span className="animate-[bounce_1s_infinite_100ms]">
+                      .
+                    </span>
+                    <span className="animate-[bounce_1s_infinite_200ms]">
+                      .
+                    </span>
+                    <span className="animate-[bounce_1s_infinite_300ms]">
+                      .
+                    </span>
+                  </span>
+                </span>
+              ) : (
+                "Sign in to account"
+              )}
             </button>
           </form>
 
           <div className="text-center mt-4 flex items-center">
-            <span className="text-sm text-gray-500">Don't have an account?</span>
-            <p
-              className="text-sm cursor-pointer font-semibold text-[#0E623D] hover:text-[#13452D] ml-2 transition-colors"
-            >
+            <span className="text-sm text-gray-500">
+              Don't have an account?
+            </span>
+            <p className="text-sm cursor-pointer font-semibold text-[#0E623D] hover:text-[#13452D] ml-2 transition-colors">
               Create account
             </p>
           </div>

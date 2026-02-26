@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
 import Dashboard from "../Layouts/Dashboard";
+import { ProtectedRoute } from "../Components/ProtectedRoute";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
     },
     {
         path : "/dashboard",
-        Component : Dashboard
+        element : <ProtectedRoute><Dashboard/></ProtectedRoute>
     },
     {
         path : "*",
