@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
+import Dashboard from "../Layouts/Dashboard";
 
 export const router = createBrowserRouter([
     {
@@ -17,4 +18,12 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path : "/dashboard",
+        Component : Dashboard
+    },
+    {
+        path : "*",
+        element : <h1>Page Not Found</h1>
+    }
 ])

@@ -1,12 +1,27 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { axiosInstance } from "../Api/axiosInstance";
+import { useNavigate } from "react-router";
 
 const Login = () => {
     const {register, handleSubmit, formState: { errors,}} = useForm();
+    const navigate = useNavigate();
 
     const handleLogin = async (data) => {
         console.log(data)
+        try {
+            const response = await axiosInstance.post("/api/login", data);
+
+            if (response.data.token) {
+                localStorage.setItem("token", response.data.token);
+                navigate("/dashboard");
+            }
+        } catch (error) {
+            console.error("Login error:", error);
+            alert("Invalid email or password! Please use the correct credentials.");
+        }
     }
+    
   return (
     <div className="min-h-screen py-2 px-1 flex justify-center items-center">
       <div className="rounded-3xl w-full max-w-md shadow-2xl relative overflow-hidden font-sans">
