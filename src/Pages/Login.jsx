@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../Api/axiosInstance";
 import { useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const {register, handleSubmit, formState: { errors,}} = useForm();
@@ -16,9 +17,10 @@ const Login = () => {
                 localStorage.setItem("token", response.data.token);
                 navigate("/dashboard");
             }
+
+            toast.success('Successfully logged in!')
         } catch (error) {
-            console.error("Login error:", error);
-            alert("Invalid email or password! Please use the correct credentials.");
+            toast.error("Invalid credentials, please try again.", error);
         }
     }
     
@@ -26,7 +28,7 @@ const Login = () => {
         const token = localStorage.getItem("token");
         if (token) {
             navigate("/dashboard", { replace: true });
-            alert('alrady loged palse logout now')
+            toast.error('You are already logged in!')
         }
     }, [navigate]);
     
