@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
         children : [
             {
                 index : true,
-                element: <Navigate to="/login" replace />
+                element: localStorage.getItem("token") ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />
             },
             {
                 path : "/login",

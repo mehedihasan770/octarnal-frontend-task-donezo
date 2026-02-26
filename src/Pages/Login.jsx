@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../Api/axiosInstance";
 import { useNavigate } from "react-router";
@@ -21,6 +21,14 @@ const Login = () => {
             alert("Invalid email or password! Please use the correct credentials.");
         }
     }
+    
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            navigate("/dashboard", { replace: true });
+            alert('alrady loged palse logout now')
+        }
+    }, [navigate]);
     
   return (
     <div className="min-h-screen py-2 px-1 flex justify-center items-center">
