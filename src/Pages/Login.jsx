@@ -20,6 +20,7 @@ const Login = () => {
 
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userEmail", response.data.email);
         navigate("/dashboard");
       }
 
@@ -106,12 +107,12 @@ const Login = () => {
                   placeholder="michael@bird.com"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-sm outline-none focus:border-[#0E623D] focus:bg-white transition-all duration-200"
                 />
-                {errors.email && (
+              </div>
+              {errors.email && (
                   <p className="text-red-500 text-xs mt-1">
                     {errors.email.message}
                   </p>
                 )}
-              </div>
             </div>
 
             <div className="space-y-2">
@@ -143,12 +144,12 @@ const Login = () => {
                   placeholder="••••••••"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-sm outline-none focus:border-[#0E623D] focus:bg-white transition-all duration-200"
                 />
-                {errors.password && (
+              </div>
+              {errors.password && (
                   <p className="text-red-500 text-xs mt-1">
                     {errors.password.message}
                   </p>
-                )}
-              </div>
+            )}
             </div>
 
             <div className="flex items-center justify-between mt-4">
