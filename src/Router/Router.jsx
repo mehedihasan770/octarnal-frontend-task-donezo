@@ -3,6 +3,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
 import Dashboard from "../Layouts/Dashboard";
 import { ProtectedRoute } from "../Components/ProtectedRoute";
+import DashboardHome from "../Pages/DashboardHome";
 
 export const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ export const router = createBrowserRouter([
             },
             {
                 path : "/dashboard/home",
-                element : <h1>hallo home</h1>
+                Component : DashboardHome
             },
             {
                 path : "/dashboard/tasks",

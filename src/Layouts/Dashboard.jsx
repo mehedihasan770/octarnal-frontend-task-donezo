@@ -10,8 +10,12 @@ const Dashboard = () => {
         <DashboardSidebar/>
       </aside>
       <div className="col-span-full md:col-span-10 space-y-4">
-        <nav className="sticky top-2"><DashboardNavbar/></nav>
-        <main className="row-span-full"><Outlet/></main>
+        <nav className="sticky top-2">
+          <DashboardNavbar/>
+        </nav>
+        <main className="row-span-full bg-[#F7F7F7] rounded-2xl min-h-[calc(100vh-94px)] shadow p-5">
+          <Outlet/>
+        </main>
       </div>
     </div>
   );
