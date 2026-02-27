@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectAnalytics from './ProjectAnalytics';
 import Reminders from './Reminders';
 import ProjectList from './ProjectList';
+import TeamCollaboration from './TeamCollaboration';
 
 const DashboardBottomSection = () => {
   return (
@@ -13,27 +14,27 @@ const DashboardBottomSection = () => {
       </div>
 
       {/* Box 2 */}
-      <div className="sm:col-span-full md:col-span-5 lg:col-span-4 xl:col-span-4 2xl:col-span-3">
+      <div className="sm:col-span-full md:col-span-full lg:col-span-4 xl:col-span-4 2xl:col-span-3">
         <Reminders/>
       </div>
 
       {/* Box 3 */}
-      <div className="sm:col-span-full md:col-span-7 md:row-span-2 lg:col-span-5 lg:row-span-2 xl:row-span-3 xl:col-span-3 2xl:col-span-3 2xl:row-span-2">
+      <div className="sm:col-span-full md:col-span-6 lg:col-span-5 lg:row-span-2 xl:col-span-6 2xl:col-span-3 2xl:row-span-2">
         <ProjectList/>
       </div>
 
       {/* Box 4 */}
-      <div className="sm:col-span-full md:col-span-5 md:row-span-2 lg:col-span-7 lg:row-span-2 xl:row-span-3 xl:col-span-5 2xl:col-span-5 2xl:row-span-2 shadow-sm border-2 border-dashed border-gray-300">
-
+      <div className="sm:col-span-full md:col-span-6 lg:col-span-7 lg:row-span-2 xl:col-span-6 2xl:col-span-5 2xl:row-span-2">
+        <TeamCollaboration/>
       </div>
 
       {/* Box 5 */}
-      <div className="sm:col-span-6 md:col-span-4 lg:col-span-6 xl:row-span-2 xl:col-span-4 2xl:col-span-4 2xl:row-span-2 shadow-sm border-2 border-dashed border-gray-300">
+      <div className="sm:col-span-6 md:col-span-4 lg:col-span-6 xl:col-span-6 2xl:col-span-4 2xl:row-span-2 shadow-sm border-2 border-dashed border-gray-300">
 
       </div>
 
       {/* Box 6 */}
-      <div className="sm:col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-4 2xl:col-span-3 shadow-sm border-2 border-dashed border-green-700">
+      <div className="sm:col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-6 2xl:col-span-3 shadow-sm border-2 border-dashed border-green-700">
 dfsd
       </div>
 

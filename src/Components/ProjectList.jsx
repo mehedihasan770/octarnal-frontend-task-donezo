@@ -55,8 +55,8 @@ const ProjectList = () => {
     <div className="bg-white rounded-3xl p-3 shadow-sm border border-gray-100 h-full w-full flex flex-col">
       
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-[18px] font-semibold text-gray-900">Project</h2>
-        <button className="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-1.5 text-sm font-medium hover:bg-gray-50 transition-colors">
+        <h2 className="md:text-[20px] font-semibold text-gray-900">Project</h2>
+        <button className="flex text-[#164E31] items-center gap-1 border border-[#164E31] rounded-full px-4 py-1.5 text-sm font-medium hover:bg-gray-50 transition-colors">
           <Plus className="w-4 h-4" />
           New
         </button>
