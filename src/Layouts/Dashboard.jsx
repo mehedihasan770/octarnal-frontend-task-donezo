@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardSidebar from "../Components/DashboardSidebar";
 import { Outlet } from "react-router";
+import DashboardNavbar from "../Components/DashboardNavbar";
 
 const Dashboard = () => {
   return (
@@ -8,8 +9,8 @@ const Dashboard = () => {
       <aside className="col-span-2 hidden md:block">
         <DashboardSidebar/>
       </aside>
-      <div className="*:border col-span-full md:col-span-10 space-y-4">
-        <nav>asdfsadf</nav>
+      <div className="col-span-full md:col-span-10 space-y-4">
+        <nav className="sticky top-2"><DashboardNavbar/></nav>
         <main className="row-span-full"><Outlet/></main>
       </div>
     </div>

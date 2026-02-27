@@ -32,7 +32,7 @@ const DashboardSidebar = () => {
   return (
     <aside className="max-w-full rounded-2xl min-h-screen bg-[#F7F7F7] border-r border-gray-100 flex flex-col">
 
-      <div className="px-6 pt-8 pb-6">
+      <div className="px-5 pt-8 pb-6">
         <div className="flex items-center gap-2.5">
           <div className="relative">
             <Radio className="w-8 h-8 text-[#0E623D]" strokeWidth={2.5} />
