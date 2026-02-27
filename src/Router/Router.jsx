@@ -21,7 +21,21 @@ export const router = createBrowserRouter([
     },
     {
         path : "/dashboard",
-        element : <ProtectedRoute><Dashboard/></ProtectedRoute>
+        element : <ProtectedRoute><Dashboard/></ProtectedRoute>,
+        children : [
+            {
+                index : true,
+                element : <Navigate to="/dashboard/home" replace /> 
+            },
+            {
+                path : "/dashboard/home",
+                element : <h1>hallo home</h1>
+            },
+            {
+                path : "/dashboard/tasks",
+                element : <h1>hallo task</h1>
+            },
+        ]
     },
     {
         path : "*",
