@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectAnalytics from './ProjectAnalytics';
+import Reminders from './Reminders';
 
 const DashboardBottomSection = () => {
   return (
@@ -11,8 +12,8 @@ const DashboardBottomSection = () => {
       </div>
 
       {/* Box 2 */}
-      <div className="sm:col-span-full md:col-span-5 lg:col-span-4 xl:col-span-4 2xl:col-span-3 shadow-sm border-2 border-dashed border-gray-300">
-
+      <div className="sm:col-span-full md:col-span-5 lg:col-span-4 xl:col-span-4 2xl:col-span-3">
+        <Reminders/>
       </div>
 
       {/* Box 3 */}

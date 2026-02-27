@@ -54,7 +54,7 @@ if (isLoading) {
 
   return (
     <div className="bg-white rounded-3xl p-3 shadow-sm border border-gray-100 h-full w-full flex flex-col">
-      <h2 className="text-xl font-bold text-gray-800 mb-6">Project Analytics</h2>
+      <h2 className="md:text-[20px] font-medium text-gray-800 mb-6">Project Analytics</h2>
       
       <div className="flex-1 w-full min-h-40">
         <ResponsiveContainer width="100%" height="100%">
