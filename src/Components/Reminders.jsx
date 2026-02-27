@@ -20,7 +20,7 @@ const Reminders = () => {
       </div>
 
       <button 
-        className="mt-6 w-full flex items-center justify-center gap-2 bg-[#164e31] hover:bg-[#0d4228] text-white py-3.5 px-4 rounded-full text-[13px] md:text-[16px] font-medium transition-all active:scale-95"
+        className="mt-6 w-full flex items-center justify-center gap-2 bg-[#164e31] hover:bg-[#0d4228] text-white py-3.5 px-4 rounded-full text-[13px] xl:text-[16px] font-medium transition-all active:scale-95"
       >
         <Video className="w-5 h-5" fill="currentColor" />
         Start Meeting
