@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import {
   LayoutDashboard,
   CheckSquare,
@@ -15,19 +15,25 @@ import {
 } from 'lucide-react';
 
 const DashboardSidebar = () => {
+  const navigate = useNavigate()
   const mainMenuItems = [
     { name: 'Dashboard', icon: LayoutDashboard, path: '/dashboard/home', badge: null },
     { name: 'Tasks', icon: CheckSquare, path: '/dashboard/tasks', badge: '12+' },
-    { name: 'Calendar', icon: Calendar, path: '/calendar', badge: null },
-    { name: 'Analytics', icon: BarChart3, path: '/analytics', badge: null },
-    { name: 'Team', icon: Users, path: '/team', badge: null },
+    { name: 'Calendar', icon: Calendar, path: '/dashboard/calendar', badge: null },
+    { name: 'Analytics', icon: BarChart3, path: '/dashboard/analytics', badge: null },
+    { name: 'Team', icon: Users, path: '/dashboard/team', badge: null },
   ];
 
   const generalMenuItems = [
-    { name: 'Settings', icon: Settings, path: '/settings', badge: null },
-    { name: 'Help', icon: HelpCircle, path: '/help', badge: null },
-    { name: 'Logout', icon: LogOut, path: '/logout', badge: null },
+    { name: 'Settings', icon: Settings, path: '/dashboard/settings', badge: null },
+    { name: 'Help', icon: HelpCircle, path: '/dashboard/help', badge: null },
   ];
+
+  const handleLogout = () => {
+    localStorage.removeItem('token'); 
+
+    navigate('/login'); 
+  };
 
   return (
     <aside className="max-w-full shadow rounded-2xl min-h-screen md:bg-[#F7F7F7] border-r border-gray-100 flex flex-col">
@@ -123,6 +129,14 @@ const DashboardSidebar = () => {
               )}
             </NavLink>
             ))}
+            <button onClick={handleLogout} className="relative cursor-pointer w-full flex items-center justify-between px-5 py-2.5 text-gray-500 hover:bg-gray-200">
+                  <div className="flex items-center gap-3">
+                    <LogOut className='w-5.5 h-5.5 font-bold'/>
+                    <span className="text-sm font-medium hidden lg:block">
+                      Logout
+                    </span>
+                  </div>
+            </button>
           </nav>
         </div>
       </div>

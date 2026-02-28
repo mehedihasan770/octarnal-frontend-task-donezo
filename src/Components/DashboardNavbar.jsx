@@ -38,7 +38,7 @@ const toggleSidebar = () => {
             <Bell className="h-5 w-5 text-gray-600" />
           </button>
 
-          <div onClick={toggleSidebar} className="flex items-center gap-3 pl-2">
+          <div onClick={toggleSidebar} className="flex cursor-pointer items-center gap-3 pl-2">
             <img
               src="/api/placeholder/48/48"
               alt="Totok Michael"

@@ -39,7 +39,7 @@ const Login = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen py-2 px-1 flex justify-center items-center">
+    <div className="min-h-screen py-2 px-2 flex justify-center items-center">
       <div className="rounded-3xl w-full max-w-md shadow-2xl relative overflow-hidden font-sans">
         <div className="absolute inset-0 overflow-hidden -z-10">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-200 rounded-full opacity-30 blur-3xl"></div>
