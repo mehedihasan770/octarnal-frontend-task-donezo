@@ -3,6 +3,7 @@ import ProjectAnalytics from './ProjectAnalytics';
 import Reminders from './Reminders';
 import ProjectList from './ProjectList';
 import TeamCollaboration from './TeamCollaboration';
+import ProjectProgress from './ProjectProgress';
 
 const DashboardBottomSection = () => {
   return (
@@ -29,13 +30,13 @@ const DashboardBottomSection = () => {
       </div>
 
       {/* Box 5 */}
-      <div className="sm:col-span-6 md:col-span-4 lg:col-span-6 xl:col-span-6 2xl:col-span-4 2xl:row-span-2 shadow-sm border-2 border-dashed border-gray-300">
-
+      <div className="sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 2xl:col-span-4 2xl:row-span-2">
+        <ProjectProgress/>
       </div>
 
       {/* Box 6 */}
-      <div className="sm:col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-6 2xl:col-span-3 shadow-sm border-2 border-dashed border-green-700">
-dfsd
+      <div className="sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 2xl:col-span-3 shadow-sm border-2 border-dashed border-green-700">
+
       </div>
 
     </div>

@@ -15,25 +15,32 @@ const TeamCollaboration = () => {
 
   const bgColors = ['bg-pink-100', 'bg-green-100', 'bg-blue-100', 'bg-yellow-100', 'bg-purple-100'];
 
-  if (isLoading) {
+if (isLoading) {
     return (
-      <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 h-full w-full animate-pulse">
+      <div className="bg-white rounded-3xl p-3 shadow-sm border border-gray-100 h-full w-full flex flex-col animate-pulse">
+        
         <div className="flex justify-between items-center mb-8">
           <div className="h-6 w-40 bg-gray-200 rounded-md"></div>
-          <div className="h-9 w-28 bg-gray-200 rounded-full"></div>
+          <div className="h-8 w-20 bg-gray-200 rounded-full"></div>
         </div>
-        {[1, 2, 3, 4].map((item) => (
-          <div key={item} className="flex justify-between items-center mb-6 last:mb-0">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gray-200"></div>
-              <div>
-                <div className="h-5 w-32 bg-gray-200 rounded mb-2"></div>
-                <div className="h-3 w-48 bg-gray-200 rounded"></div>
+        <div className="flex-col flex gap-4">
+          {[1, 2, 3, 4].map((item) => (
+            <div key={item} className="flex justify-between items-center">
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+                <div>
+                  <div className="h-4 w-32 bg-gray-200 rounded mb-1"></div>
+                  <div className="h-3 w-40 bg-gray-200 rounded"></div>
+                </div>
               </div>
+
+              <div className="h-6 w-16 bg-gray-200 rounded-md"></div>
+              
             </div>
-            <div className="h-6 w-20 bg-gray-200 rounded-md"></div>
-          </div>
-        ))}
+          ))}
+        </div>
+
       </div>
     );
   }
