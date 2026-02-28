@@ -4,6 +4,7 @@ import Reminders from './Reminders';
 import ProjectList from './ProjectList';
 import TeamCollaboration from './TeamCollaboration';
 import ProjectProgress from './ProjectProgress';
+import TimeTracker from './TimeTracker';
 
 const DashboardBottomSection = () => {
   return (
@@ -35,8 +36,8 @@ const DashboardBottomSection = () => {
       </div>
 
       {/* Box 6 */}
-      <div className="sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 2xl:col-span-3 shadow-sm border-2 border-dashed border-green-700">
-
+      <div className="sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 2xl:col-span-3">
+        <TimeTracker/>
       </div>
 
     </div>
