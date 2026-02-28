@@ -65,5 +65,5 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your system.
 
 **1. Clone the repository:**
 ```bash
-git clone [https://github.com/your-username/octarnal-frontend-task-donezo.git](https://github.com/your-username/octarnal-frontend-task-donezo.git)
+git clone [https://github.com/mehedihasan770/octarnal-frontend-task-donezo.git](https://github.com/mehedihasan770/octarnal-frontend-task-donezo.git)
 cd octarnal-frontend-task-donezo
